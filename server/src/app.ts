@@ -5,6 +5,8 @@ import jwt from '@fastify/jwt'
 import cookie from '@fastify/cookie'
 import config from 'config'
 import fastify, { FastifyRequest, FastifyReply } from 'fastify'
+import userRoutes from './modules/user/user.route'
+import vaultRoutes from './modules/vault/vault.route'
 
 function CreateApp() {
   const app = fastify()
@@ -42,7 +44,14 @@ function CreateApp() {
         return reply.send(e)
       }
     }
-  )   
+  )
+
+  app.register(userRoutes, {
+    prefix: 'api/users',
+  })
+  app.register(vaultRoutes, {
+    prefix: 'api/vault',
+  })       
 
   return app
 }
