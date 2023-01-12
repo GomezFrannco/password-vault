@@ -1,5 +1,6 @@
 import config from 'config'
 import CreateApp from './src/app'
+import { connectToDB } from './src/utils/db'
 import logger from './src/utils/logger'
 
 async function main() {
