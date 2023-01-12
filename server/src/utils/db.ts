@@ -4,7 +4,9 @@ import logger from './logger'
 
 export async function connectToDB() {
   try {
-    await mongoose.connect(config.get('dbHost'))
+    await mongoose.connect(config.get('dbHost')).then(() => {
+      logger.info('Connected to MongoDB')
+    })
   } catch (e) {
     logger.error('Error connecting to database', e)
     process.exit(1)
