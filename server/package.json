@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node-dev --exit-child --transpile-only ./index.ts",
+    "start": "node ./dist/index.js NODE_ENV=production",
     "build": "tsc --build",
     "fix": "eslint --fix .",
     "prepare": "cd .. && husky install ./.husky"
