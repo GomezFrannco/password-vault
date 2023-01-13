@@ -1,24 +1,18 @@
-import { FastifyRequest, FastifyReply } from 'fastify'
-import { createVault, findVaultByUser } from '../vault/vault.service'
-import { createUser, findUser, generateSalt } from './user.service'
+import { FastifyReply } from 'fastify'
+import { FastifyRequest } from 'fastify'
+import { createUser, findUser, generateSalt} from '../../services/user'
+import { createVault, findVaultByUser } from '../../services/vault'
+import { logger } from '@typegoose/typegoose/lib/logSettings'
 import config from 'config'
-import logger from '../../utils/logger'
 
-export async function registerUserHandler(
-  request: FastifyRequest<{
-    Body: Parameters<typeof createUser>[number];
-  }>,
-  reply: FastifyReply
-) {
-  const body = request.body
+export async function registerUserHandler(request: FastifyRequest<{Body: Parameters<typeof createUser>[number]}>, reply: FastifyReply) {
   try {
-    const user = await createUser(body)
+    const newUser = await createUser(request.body)
     const salt = generateSalt()
-    const vault = await createVault({ user: user._id, salt })
-
+    const vault = await createVault({user: newUser._id, salt })
     const accessToken = await reply.jwtSign({
-      _id: user._id,
-      email: user.email
+      _id: newUser._id,
+      email: newUser.email
     })
     reply.setCookie('serverToken', accessToken, {
       domain: config.get('cookieDomain'),
@@ -27,11 +21,10 @@ export async function registerUserHandler(
       httpOnly: true,
       sameSite: false
     })
-
-    return reply.code(201).send({accessToken, vault: vault.data, salt})
+    return reply.code(201).send({ accessToken, vault: vault.data, salt })
   } catch (e) {
     logger.error(e, 'Error creating user')
-    return reply.code(500).send(e) // improve error handling
+    return reply.code(500).send(e)
   }
 }
 

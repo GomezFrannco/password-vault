@@ -1,5 +1,5 @@
 import { FastifyInstance, FastifyPluginOptions, FastifyError } from 'fastify'
-import { updateVaultHandler } from './vault.controller'
+import { updateVaultHandler } from '../../controllers/vault'
 
 function vaultRoutes(
   app: FastifyInstance,

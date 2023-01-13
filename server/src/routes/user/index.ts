@@ -1,5 +1,5 @@
 import { FastifyInstance, FastifyPluginOptions, FastifyError } from 'fastify'
-import { loginHandler, registerUserHandler } from './user.controller'
+import { loginHandler, registerUserHandler } from '../../controllers/user'
 
 function userRoutes(
   app: FastifyInstance,

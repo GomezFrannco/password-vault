@@ -1,4 +1,4 @@
-import { UserModel } from './user.model'
+import { UserModel } from '../../models/user'
 import crypto from 'crypto'
 import argon2 from 'argon2'
 

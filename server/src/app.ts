@@ -5,8 +5,8 @@ import jwt from '@fastify/jwt'
 import cookie from '@fastify/cookie'
 import config from 'config'
 import fastify, { FastifyRequest, FastifyReply } from 'fastify'
-import userRoutes from './modules/user/user.route'
-import vaultRoutes from './modules/vault/vault.route'
+import userRoutes from './routes/user'
+import vaultRoutes from './routes/vault'
 
 declare module 'fastify' { 
   export interface FastifyInstance {

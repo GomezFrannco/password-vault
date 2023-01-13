@@ -1,5 +1,5 @@
 import { prop, getModelForClass, Ref} from '@typegoose/typegoose'
-import { User } from '../user/user.model'
+import { User } from '../../models/user'
 
 export class Vault {
   @prop({ required: true, ref: ()=> User })

@@ -1,4 +1,4 @@
-import { VaultModel } from './vault.model'
+import { VaultModel } from '../../models/vault'
 
 export function createVault(input: { user: string, salt: string }) {
   return VaultModel.create(input)

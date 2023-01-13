@@ -2,7 +2,7 @@ import { FastifyReply } from 'fastify'
 import { FastifyRequest } from 'fastify'
 import { get } from 'lodash'
 import logger from '../../utils/logger'
-import { updateVault } from './vault.service'
+import { updateVault } from '../../services/vault'
 
 export async function updateVaultHandler(
   request: FastifyRequest<{
