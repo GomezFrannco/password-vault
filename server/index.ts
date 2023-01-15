@@ -5,10 +5,11 @@ import logger from './src/utils/logger'
 
 async function main() {
   const app = CreateApp()
+  const port = <number>config.get('port')
   try {
-    app.listen({ port: config.get('port'), host: '0.0.0.0' })
-    logger.info(`Server ready at ${config.get('port')}`)
-    await connectToDB()
+    await app.listen({ port, host: '0.0.0.0' })
+    logger.info(`Server ready at ${port}`)
+    connectToDB()
   } catch (err) {
     logger.error(err)
     process.exit(1)
