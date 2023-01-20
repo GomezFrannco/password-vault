@@ -1,0 +1,48 @@
+.authWrapper {
+  width: 68.75rem;
+  height: 35.25rem;
+  display: flex;
+  border-radius: 1.75rem;
+  box-shadow: 0 0 0.3125rem rgba(0, 0, 0, 0.25);
+}
+
+.authForm {
+  max-width: 26.9375rem;
+  width: 100%;
+  padding: 2.625rem 2.5rem;
+  border-radius: 1.75rem 0 0 1.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.signinMessage, .signupMessage {
+  max-width: 41.8125rem;
+  width: 100%;
+  height: 35.25rem;
+  padding: 0 3.75rem;
+  background-color: #121212;
+  display: flex;
+  align-items: center;
+  border-radius: 0 1.75rem 1.75rem 0;
+}
+.signupMessage {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.signinMessage h1, .signupMessage h1 {
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #F9F8F4;
+}
+
+.signupMessage ul {
+  margin-top: 3.125rem;
+}
+
+.signupMessage ul li {
+  list-style-type: disc;
+  color: #F9F8F4
+}
