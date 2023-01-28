@@ -1,0 +1,37 @@
+.passwordCard {
+  width: 25rem;
+  height: 7.125rem;
+  padding: 0.875rem;
+  /* background: #F9F8F4; */
+  box-shadow: 0 0 0.3125rem rgba(0, 0, 0, 0.25);
+  border-radius: 0.8125rem;
+  display: flex;
+  justify-content: space-between;
+}
+.cardImage {
+  width: 5.375rem;
+  height: 5.375rem;
+}
+.cardText {
+  max-width: 17rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.cardText div h3 {
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+.cardText div p {
+  font-size: 1rem;
+  color: #777777;
+}
+.cardText button {
+  height: 1.875rem;
+  width: 100%;
+  background-color: #121212;
+  border-radius: 0.3125rem;
+  color: white;
+  font-weight: 600;
+}
