@@ -16,3 +16,10 @@ export default function PasswordCard() {
     </div>
   )
 }
+
+export function PasswordCardLoading() {
+  return (
+    <div className={style.loadingCard}>
+    </div>
+  )
+}
